@@ -177,7 +177,8 @@ if(first()){
     }
     if(changed(owner():keyPressed("g"))&owner():keyPressed("g")){
         Thermal=!Thermal
-        concmd("flir_enable "+Thermal)
+        concmd("flir_toggle")
+        concmd("flir_enabled "+Thermal)
     }
 }
 
