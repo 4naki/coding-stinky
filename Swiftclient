@@ -48,22 +48,22 @@ if(first()){
     #[-- Settings --]#
     
     
-    #Player count #def 25
+    #Player count, increase this in case there are more people on the server than 25 #def 25
     Player_count=25
     
-    #Max distance where the detailed info will stop showing
+    #Max distance where the detailed info will stop showing, higher value = longer distance for detailed info & worse performance #def 1000/1500/2000
     Max_Distance=1500
     
-    #If player is too far name will be displayed
+    #If player is too far name will be displayed #def 1
     Show_Simple_Names_If_Too_Far=1
     
     #Interval of the hud, lower value = higher refresh rate & worse performance #def 100/200/250
     Hud_refresh_Rate=100
     
-    #Toggles aimbot
+    #Toggles aimbot #def 1
     Use_Aimbot=1
     
-    #Interval of the aimbot
+    #Interval of the aimbot #def 25/50/100
     Aimbot_Refresh_Rate=25
     
     
@@ -184,6 +184,7 @@ if(first()){
 
 if(Lock){
     if(clk("ABrefresh")){
+        #this line prevents the e2 from crashing
         if(cpuUsage()/timeQuota()<0.2 & opcounter()/hardQuota() < 0.2){
             Ang=(Target:attachmentPos("eyes")-owner():shootPos()):toAngle()
             owner():plySetAng(Ang*ang(1,1,0))
