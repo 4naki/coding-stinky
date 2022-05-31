@@ -1,6 +1,6 @@
 @name Swiftclient
 @inputs EGP:wirelink
-@persist S:array INT INT2 Lock Target:entity
+@persist S:array INT INT2 Lock Target:entity Thermal
 @trigger none
 
 if(first()){
@@ -15,6 +15,35 @@ if(first()){
       \___|  \_/\_/  |__|     |__| \____||_____||__||__|__|  |__|  
                                                                    
 ]#
+    
+    #[
+        
+        Introduction...
+        
+        
+        Cheats and other stuff by Naki
+        
+        Requirements:
+        concmd to be enabled for "flir_enable 1" command (thermal, test it yourself if you don't believe me)
+        
+        Features:
+        
+        Wallhacks
+        Aimbot
+        Thermal Vision
+        
+        
+        More will be added later
+        
+        
+        Controls:
+        
+        Mouse2 toggles aimbot
+        G toggles thermal
+        
+        Settings below:
+        
+    ]#
     
     #[-- Settings --]#
     
@@ -145,6 +174,10 @@ if(first()){
                 timer("ABrefresh",INT2)
             }
         }
+    }
+    if(changed(owner():keyPressed("g"))&owner():keyPressed("g")){
+        Thermal=!Thermal
+        concmd("flir_enable "+Thermal)
     }
 }
 
